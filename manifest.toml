@@ -50,6 +50,14 @@ ram.runtime = "2G"
     [install.admin]
     type = "user"
 
+    [install.use_gpu]
+    ask.en = "Install with NVIDIA GPU support?"
+    ask.fr = "Installer avec le support GPU NVIDIA ?"
+    help.en = "Only enable this if the server has a working NVIDIA driver. The GPU build of torch pulls in ~6 GB of CUDA libraries, which is wasted space on CPU-only hosts."
+    help.fr = "À activer uniquement si le serveur dispose d'un pilote NVIDIA fonctionnel. La version GPU de torch télécharge environ 6 Go de bibliothèques CUDA, qui sont inutiles sur un hôte sans GPU."
+    type = "boolean"
+    default = false
+
 [resources]
 
     [resources.sources]

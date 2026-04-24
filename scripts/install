@@ -23,11 +23,8 @@ ynh_setup_source --dest_dir="$install_dir"
 
 chown -R "$app:www-data" "$install_dir"
 
-pushd "$install_dir"
- python3 -m venv venv
- venv/bin/pip install --upgrade pip setuptools wheel
- venv/bin/pip install open-webui=="$upstream_version"
-popd
+python3 -m venv "$install_dir/venv"
+install_openwebui
 
 chown -R "$app:www-data" "$install_dir"
 
